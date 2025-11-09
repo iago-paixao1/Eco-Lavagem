@@ -9,5 +9,9 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./login.css'],
 })
 export class LoginComponent {
+  onSubmit() {
+    console.log('Login enviado');
+  }
+
 
 }

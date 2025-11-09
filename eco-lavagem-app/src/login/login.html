@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="container-fluid vh-100 d-flex flex-column">
+  <nav class="navbar navbar-light bg-light px-4">
+    <a class="navbar-brand" href="#">EcoLavagem Admin</a>
+  </nav>
+
+  <main class="row flex-grow-1">
+    <!-- Lado esquerdo -->
+    <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center ">
+
+      <form class="w-75" (ngSubmit)="onSubmit()" >
+              <h2 class="mb-4">Login Administrativo</h2>
+
+              <div class="mb-3">
+                <label for="username" class="form-label">Nome de usuário</label>
+                <input type="text" id="username" name="username" class="form-control" required ngModel>
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label">Senha</label>
+                <input type="password" id="password" name="password" class="form-control" required ngModel>
+              </div>
+
+              <div class="mb-3 text-end">
+                <a href="#" class="text-decoration-none">Esqueci a senha</a>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100">Entrar</button>
+            </form>
+    </div>
+
+    <!-- Lado direito: formulário -->
+    <div class="col-md-6 d-flex align-items-center justify-content-center bg-primary text-white">
+       <div class="text-center px-5">
+        <h1>Bem-vindo de volta!</h1>
+        <p>Gerencie sua plataforma com segurança e eficiência.</p>
+      </div>
+    </div>
+  </main>
+</div>
