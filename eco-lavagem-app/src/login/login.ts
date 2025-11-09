@@ -1,5 +1,6 @@
+import { routes } from './../app/app.routes';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,11 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./login.css'],
 })
 export class LoginComponent {
+  constructor(private routes: Router) {}
+
   onSubmit() {
     console.log('Login enviado');
+    this.routes.navigate(['/layout']);
   }
 
 

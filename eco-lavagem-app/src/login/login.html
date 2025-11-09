@@ -1,11 +1,11 @@
-<div class="container-fluid vh-100 d-flex flex-column">
-  <nav class="navbar navbar-light bg-light px-4">
-    <a class="navbar-brand" href="#">EcoLavagem Admin</a>
+<div class="container-fluid vh-100 d-flex flex-column ">
+  <nav class="navbar navbar-dark bg-primary mb-1 px-3">
+    <a class="navbar-brand " href="#">EcoLavagem Admin</a>
   </nav>
 
   <main class="row flex-grow-1">
     <!-- Lado esquerdo -->
-    <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center ">
+    <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center rounded-3 shadow-sm">
 
       <form class="w-75" (ngSubmit)="onSubmit()" >
               <h2 class="mb-4">Login Administrativo</h2>
@@ -24,15 +24,15 @@
                 <a href="#" class="text-decoration-none">Esqueci a senha</a>
               </div>
 
-              <button type="submit" class="btn btn-primary w-100">Entrar</button>
+              <button type="submit"  routerLink="/layout" class="btn btn-primary w-100">Entrar</button>
             </form>
     </div>
 
     <!-- Lado direito: formulário -->
-    <div class="col-md-6 d-flex align-items-center justify-content-center bg-primary text-white">
+    <div class="col-md-6 d-flex align-items-center justify-content-center bg-primary text-white rounded-3">
        <div class="text-center px-5">
         <h1>Bem-vindo de volta!</h1>
-        <p>Gerencie sua plataforma com segurança e eficiência.</p>
+        <p>Boa sorte!!!</p>
       </div>
     </div>
   </main>
