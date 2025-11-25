@@ -1,0 +1,25 @@
+name: Validate PR Title
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  check-title:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate PR title pattern
+        run: |
+          TITLE="${{ github.event.pull_request.title }}"
+          echo "Título do PR: $TITLE"
+
+          # Regex que valida: feat(<numero>): <descrição>
+          if [[ ! "$TITLE" =~ ^feat\([0-9]+\):\ .+ ]]; then
+            echo "❌ Título do PR inválido!"
+            echo "Formato obrigatório:"
+            echo "  feat(<numero>): <descrição>"
+            exit 1
+          fi
+
+          echo "✔ Título válido!"
