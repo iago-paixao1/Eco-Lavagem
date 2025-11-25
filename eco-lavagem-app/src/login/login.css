@@ -1,0 +1,71 @@
+/* app.component.css */
+
+/* Paleta */
+:root{
+  --green-60: #16A34A;    /* primário 60% */
+  --orange-30: #F97316;   /* secundário 30% */
+  --gray-10: #F3F4F6;     /* neutro 10% */
+  --bg: #ffffff;
+}
+
+/* Background geral */
+.bg-light-custom {
+  background: linear-gradient(180deg, #f7fbf7 0%, #ffffff 100%);
+}
+
+/* Hero column */
+.hero-col {
+  background: linear-gradient(90deg, rgba(22,163,74,0.03), rgba(249,115,22,0.02));
+  min-height: 360px;
+}
+.hero-content .text-primary-60 {
+  color: var(--green-60);
+}
+
+/* Decorative hero image */
+.hero-img {
+  right: -20px;
+  bottom: -20px;
+  width: 320px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Brand circle */
+.brand {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(180deg, rgba(22,163,74,0.06), rgba(22,163,74,0.02));
+  border-radius: 50%;
+}
+
+/* Modal orange styles */
+.bg-orange-light {
+  background: rgba(249,115,22,0.12);
+}
+.text-orange {
+  color: var(--orange-30);
+}
+.btn-orange {
+  background: var(--orange-30);
+  border: none;
+  color: white;
+}
+
+/* Inputs rounded look */
+.form-control {
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  border: 1px solid #e6e6e6;
+}
+
+/* Make large card rounded */
+.modal-content {
+  border-radius: 16px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  .hero-img { display: none; }
+  .hero-col { padding: 2rem !important; text-align:center }
+}
