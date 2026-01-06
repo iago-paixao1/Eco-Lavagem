@@ -1,0 +1,159 @@
+/* -------- BASE -------- */
+.layout-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.navbar {
+  height: 64px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+.menu a.active {
+  color: #28a745;
+  border-bottom: 2px solid #28a745;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+/* -------- CONTENT -------- */
+.content {
+  padding: 32px 48px;
+}
+
+.welcome {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: -5px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* -------- CARDS -------- */
+.cards {
+  display: flex;
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+}
+
+.card strong {
+  display: block;
+  font-size: 22px;
+  margin-top: 8px;
+}
+
+.percent.up {
+  color: #28a745;
+}
+
+.orange {
+  color: #f57c00;
+}
+
+/* -------- QUICK ACTIONS -------- */
+.quick-actions {
+  display: flex;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.btn {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+}
+
+.green { background: #28a745; }
+.orange { background: #ef6c00; }
+.blue { background: #2962ff; }
+
+/* -------- GRID -------- */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+/* AGENDA */
+.card-big {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+}
+
+.agenda-list {
+  margin-top: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.agenda-list li {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.hour {
+  width: 60px;
+  font-weight: bold;
+}
+
+.info strong {
+  display: block;
+}
+
+.status {
+  margin-left: auto;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.status.done { background: #e8f5e9; color: #28a745; }
+.status.progress { background: #fff3e0; color: #ef6c00; }
+.status.scheduled { background: #e3f2fd; color: #2962ff; }
+
+/* GRÁFICOS */
+.graph {
+  height: 200px;
+}

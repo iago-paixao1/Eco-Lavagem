@@ -14,7 +14,7 @@ export const routes: Routes = [
     path: 'login',
     loadComponent: () => import('../login/login').then((m) => m.LoginComponent),
   },
-  { path: '**', redirectTo: 'dashboard' }, // rota coringa para redirecionar páginas não encontradas
+  { path: '**', redirectTo: 'layout' }, // rota coringa para redirecionar páginas não encontradas
 ];
 
 @NgModule({

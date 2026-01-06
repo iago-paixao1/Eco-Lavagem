@@ -1,25 +1,110 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Eco Lavagem</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Agendamentos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Estoque</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<div class="layout-container">
 
-<main class="container mt-4">
-  <router-outlet> </router-outlet>
-</main>
+  <!-- NAVBAR -->
+  <header class="navbar shadow-sm bg-white">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="EcoLavagem">
+      <span class="brand-name">EcoLavagem</span>
+    </div>
+
+    <nav class="menu">
+      <a routerLink="/layout" class="active">Início</a>
+      <a routerLink="/agendamentos">Agendamentos</a>
+      <a routerLink="/profissionais">Profissionais</a>
+      <a routerLink="/servicos">Serviços</a>
+      <a routerLink="/relatorios">Relatórios</a>
+    </nav>
+
+    <div class="user-area">
+      <img class="avatar" src="assets/avatar.png" alt="Usuário">
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="content">
+
+    <h2 class="welcome">Bom dia, {{ userName }}!</h2>
+    <p class="subtitle">Aqui está o resumo das atividades de hoje</p>
+
+    <!-- CARDS -->
+    <section class="cards">
+      <div class="card">
+        <h4>Agendamentos Hoje</h4>
+        <strong>24</strong>
+        <span class="percent up">+12% vs ontem</span>
+      </div>
+
+      <div class="card">
+        <h4>Lavagens Concluídas</h4>
+        <strong>18</strong>
+        <span class="percent up">+5% vs ontem</span>
+      </div>
+
+      <div class="card">
+        <h4>Em Andamento</h4>
+        <strong class="orange">6</strong>
+      </div>
+
+      <div class="card">
+        <h4>Profissionais Ativos</h4>
+        <strong>8</strong>
+      </div>
+    </section>
+
+    <!-- AÇÕES RÁPIDAS -->
+    <section class="quick-actions">
+      <button class="btn green">+ Novo Agendamento</button>
+      <button class="btn orange">+ Novo Profissional</button>
+      <button class="btn blue">+ Novo Serviço</button>
+    </section>
+
+    <!-- CONTEÚDO EM DUAS COLUNAS -->
+    <section class="grid">
+
+      <!-- AGENDA DO DIA -->
+      <div class="agenda card-big">
+        <h3>Agenda de Hoje</h3>
+        <p class="date">15 de Novembro, 2024</p>
+
+        <ul class="agenda-list">
+
+          <li>
+            <span class="hour">08:00</span>
+            <div class="info">
+              <strong>Honda Civic - Victor Saul</strong>
+              <p>Lavagem Completa • Carro</p>
+            </div>
+            <span class="status done">Concluído</span>
+          </li>
+
+          <li>
+            <span class="hour">08:30</span>
+            <div class="info">
+              <strong>Toyota Corolla - Maria Santos</strong>
+              <p>Lavagem Completa • Carro</p>
+            </div>
+            <span class="status progress">Em Andamento</span>
+          </li>
+
+          <li>
+            <span class="hour">09:00</span>
+            <div class="info">
+              <strong>BMW X3 - Ricardo Lima</strong>
+              <p>Lavagem Completa • SUV</p>
+            </div>
+            <span class="status scheduled">Agendado</span>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- GRÁFICOS (mock, você substitui depois por chart.js) -->
+      <div class="graphs">
+        <div class="card graph"></div>
+        <div class="card graph"></div>
+      </div>
+
+    </section>
+
+  </main>
+</div>
