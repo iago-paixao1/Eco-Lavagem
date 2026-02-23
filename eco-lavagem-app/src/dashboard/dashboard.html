@@ -1,13 +1,75 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Ecolavagem</title>
+  <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <header>
-        <div> class</div>
-    </header>
-    
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-circle">E</div>
+      <div>
+        <strong>Eco Lavagem</strong><br>
+        <small>Sistema de Gestão de Lavagem</small>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <a href="dashboard.html" class="active">Início</a>
+      <a href="agendamento.html">Agendamentos</a>   
+      <a href="#">Profissionais</a>
+      <a href="#">Serviços</a>
+      <a href="#">Relatórios</a>
+    </nav>
+
+    <input type="text" placeholder="Buscar serviços..." class="search">
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main class="container">
+
+    <div class="top-section">
+      <div>
+        <h1>Bem-vindo de volta!</h1>
+        <p>Hoje, 15 de Novembro de 2024</p>
+      </div>
+
+      <button class="btn">+ Novo Agendamento</button>
+    </div>
+
+    <!-- CARDS -->
+    <div class="cards">
+
+      <div class="card">
+        <h3>Agendamentos Hoje</h3>
+        <h2>24</h2>
+        <p>+12% vs ontem</p>
+      </div>
+
+      <div class="card">
+        <h3>Profissionais Cadastrados</h3>
+        <h2>18</h2>
+        <p>+8% vs ontem</p>
+      </div>
+
+      <div class="card">
+        <h3>Serviços Ativos</h3>
+        <h2>6</h2>
+        <p>4 profissionais ativos</p>
+      </div>
+
+      <div class="card">
+        <h3>Em andamento</h3>
+        <h2>8</h2>
+        <p>de 10 disponíveis</p>
+      </div>
+
+    </div>
+
+  </main>
+
 </body>
 </html>
