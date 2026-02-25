@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 declare var bootstrap: any; // usa o bundle do bootstrap incluido em index.html
 
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   recoverForm!: FormGroup;
   showPw = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private router:Router) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -39,10 +40,12 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
+    console.log('Login', this.loginForm.value);
     if (this.loginForm.invalid) return;
     // TODO: chamar API de autenticação
-    console.log('Login', this.loginForm.value);
+    this.router.navigate(['/dashboard'])
   }
+
 
   openRecoverModal(event?: Event) {
     if (event) event.preventDefault();
