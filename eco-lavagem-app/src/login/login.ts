@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     console.log('Login', this.loginForm.value);
     if (this.loginForm.invalid) return;
     // TODO: chamar API de autenticação
-    this.router.navigate(['/dashboard'])
+    this.router.navigate(['/layout']);
   }
 
 
