@@ -1,0 +1,31 @@
+.navbar {
+  height: 64px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.menu a.active {
+  color: #28a745;
+  border-bottom: 2px solid #28a745;
+}

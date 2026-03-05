@@ -11,7 +11,12 @@ export const routes: Routes = [
     loadComponent: () => import('../layout/layout').then(m => m.LayoutComponent),
   },
   {
+    path: 'agendamento',
+    loadComponent: () => import('../agendamento/agendamento').then(m => m.Agendamento),
+  },
+  {
     path: 'login',
+    title: 'LOGIN',
     loadComponent: () => import('../login/login').then((m) => m.LoginComponent),
   },
   { path: '**', redirectTo: 'layout' }, // rota coringa para redirecionar páginas não encontradas
