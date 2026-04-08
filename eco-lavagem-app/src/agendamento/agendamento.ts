@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 export class Agendamento {
   formAgendamento!: FormGroup;
   agendamentosList: AgendamentoModel[] = [];
+  idSelecionado: number = 0;
 
   constructor(
     private fb: FormBuilder,
@@ -42,4 +43,14 @@ export class Agendamento {
       this.agendamentosList = this.agendamentoService.getAll()
     }
   }
+
+  selecionarId(id:number):void {
+    this.idSelecionado = id
+  }
+  
+  onExcluir(): void{
+    console.log('ID',this.idSelecionado)
+    this.agendamentoService.delete(this.idSelecionado)
+    this.agendamentosList = this.agendamentoService.getAll()
+  } 
 }

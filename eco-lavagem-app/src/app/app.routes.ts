@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import path from 'path';
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
@@ -13,6 +14,10 @@ export const routes: Routes = [
   {
     path: 'agendamento',
     loadComponent: () => import('../agendamento/agendamento').then(m => m.Agendamento),
+  },
+  {
+    path: 'profissional',
+    loadComponent: () => import('../profissional/profissional').then(m => m.Profissional),
   },
   {
     path: 'login',

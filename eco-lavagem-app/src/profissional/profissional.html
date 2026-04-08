@@ -1,0 +1,75 @@
+<!-- <button
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#staticBackdrop"
+>+Novo Profissional
+</button>
+
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body">
+          <form [formGroup]="formProfissional" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label>Nome</label>
+              <input type="text" class="form-control" formControlName="nome" />
+            </div>
+
+            <div class="mb-3">
+              <label>Nome Completo</label>
+              <input type="text" class="form-control" formControlName="veiculo" />
+            </div>
+
+            <div class="mb-3">
+              <label>Cargo</label>
+              <select name="cargo" id="cargo">
+                <option value="">Lavador Junior</option>
+                <option value="">Lavador Pleno</option>
+                <option value="">Lavador Sênior</option>
+                <option value="">Polidor Especialista</option>
+              </select>
+
+            <div class="mb-3">
+              <label>Telefone</label>
+              <input type="text" class="form-control" formControlName="telefone" />
+            </div>
+
+            <div class="mb-3">
+              <label>E-mail</label>
+              <input type="email" class="form-control" formControlName="email" />
+            </div>
+
+            <div class="d-flex justify-content-end gap-2">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Cancelar
+              </button>
+
+              <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="formProfissional.invalid"
+                data-bs-dismiss="modal"
+              >
+                Cadastrar Funcionário
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

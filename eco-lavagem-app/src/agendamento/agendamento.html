@@ -5,7 +5,7 @@
   data-bs-toggle="modal"
   data-bs-target="#staticBackdrop"
 >
-  Launch static backdrop modal
+  +Novo agendamento
 </button>
 
 <div class="session-cards">
@@ -15,7 +15,7 @@
         <div class="avatar">JS</div>
 
         <div class="info">
-          <div class="name">{{agendamento.nome}}</div>
+          <div class="name">{{ agendamento.nome }}</div>
           <div class="details">Honda Civic • Lavagem Completa</div>
         </div>
       </div>
@@ -38,14 +38,21 @@
 
         <div class="actions">
           <button class="icon edit">✏️</button>
-          <button class="icon delete">🗑️</button>
+          <button
+            class="icon delete"
+            data-bs-toggle="modal"
+            data-bs-target="#modalExclusao"
+            (click)="selecionarId(agendamento.id)"
+          >
+            🗑️
+          </button>
         </div>
       </div>
     </div>
   }
 </div>
 
-<!-- Modal -->
+<!-- Modal formulário de cadastro -->
 <div
   class="modal fade"
   id="staticBackdrop"
@@ -114,6 +121,31 @@
             </div>
           </form>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal de confirmação/exclusão -->
+<div
+  class="modal fade"
+  id="modalExclusao"
+  tabindex="-1"
+  aria-labelledby="modalExclusaolabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalExclusaolabel">Excluir Agendamento</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Tem certeza que deseja excluir o registro?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onExcluir()">
+          Excluir Registro
+        </button>
       </div>
     </div>
   </div>
