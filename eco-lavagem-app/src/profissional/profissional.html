@@ -1,11 +1,57 @@
-<!-- <button
+<!-- Button trigger modal -->
+<button
   type="button"
   class="btn btn-primary"
   data-bs-toggle="modal"
   data-bs-target="#staticBackdrop"
->+Novo Profissional
+>
+  +Cadastrar Profissional
 </button>
 
+<div class="session-cards">
+@for (profissional of profissionalList; track $index) {
+  <div class="card-profissional">
+    <div class="left">
+      <div class="avatar"></div>
+
+      <div class="info">
+        <div class="name">{{ profissional.nome }}</div>
+        <div class="details">{{ profissional.cpf }}</div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="item">
+        <span class="label">{{ profissional.email }}</span>
+      </div>
+
+      <div class="item">
+        <span class="label">{{ profissional.sexo }}</span>
+        <span class="status done"></span>
+      </div>
+
+      <div class="actions">
+        <button
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          (click)="selecionarId(profissional.id)"
+        >
+          ✏️
+        </button>
+
+        <button
+          class="icon delete"
+          data-bs-toggle="modal"
+          data-bs-target="#modalExclusao"
+          (click)="selecionarId(profissional.id)"
+        >
+          🗑️
+        </button>
+      </div>
+    </div>
+  </div>
+}</div>
+<!-- Modal formulário de cadastro -->
 <div
   class="modal fade"
   id="staticBackdrop"
@@ -19,42 +65,48 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="limparFormulario()"
+        ></button>
       </div>
       <div class="modal-body">
         <div class="modal-body">
           <form [formGroup]="formProfissional" (ngSubmit)="onSubmit()">
-            <div class="mb-3">
+            <div class="campo">
               <label>Nome</label>
               <input type="text" class="form-control" formControlName="nome" />
             </div>
 
-            <div class="mb-3">
-              <label>Nome Completo</label>
-              <input type="text" class="form-control" formControlName="veiculo" />
+            <div class="campo">
+              <label>CPF</label>
+              <input type="text" class="form-control" formControlName="cpf" maxlength="11" />
             </div>
 
-            <div class="mb-3">
-              <label>Cargo</label>
-              <select name="cargo" id="cargo">
-                <option value="">Lavador Junior</option>
-                <option value="">Lavador Pleno</option>
-                <option value="">Lavador Sênior</option>
-                <option value="">Polidor Especialista</option>
-              </select>
-
-            <div class="mb-3">
-              <label>Telefone</label>
-              <input type="text" class="form-control" formControlName="telefone" />
-            </div>
-
-            <div class="mb-3">
+            <div class="campo">
               <label>E-mail</label>
-              <input type="email" class="form-control" formControlName="email" />
+              <input type="text" class="form-control" formControlName="email" />
+            </div>
+
+            <div class="campo">
+              <label>Sexo</label>
+              <select name="sexo" id="sexo" formControlName="sexo">
+                <option value="masc">Masculino</option>
+                <option value="fem">Feminino</option>
+                <option value="outros">Outros</option>
+              </select>
             </div>
 
             <div class="d-flex justify-content-end gap-2">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                (click)="limparFormulario()"
+              >
                 Cancelar
               </button>
 
@@ -64,7 +116,7 @@
                 [disabled]="formProfissional.invalid"
                 data-bs-dismiss="modal"
               >
-                Cadastrar Funcionário
+                Salvar
               </button>
             </div>
           </form>
@@ -72,4 +124,29 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>
+
+<!-- modal de confirmação/exclusão -->
+<div
+  class="modal fade"
+  id="modalExclusao"
+  tabindex="-1"
+  aria-labelledby="modalExclusaolabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalExclusaolabel">Excluir Profissional</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Tem certeza que deseja excluir o profissional?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onExcluir()">
+          Excluir Registro
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

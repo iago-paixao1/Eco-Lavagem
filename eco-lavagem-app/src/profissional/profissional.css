@@ -1,0 +1,147 @@
+/*modal */
+
+/*cada campo*/
+.campo{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.campo label{
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #555;
+}
+/*input e select */
+.campo input,
+.campo select{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+/*fim do modal*/
+
+.session-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  max-width: 1200px;  /*limita largura */
+  margin: 40px auto;  /*centraliza */
+  padding: 0 20px;    /*respiro nas laterais */
+}
+
+/* CARD */
+.card-profissional {
+width: 100%;
+  background: #f8f9fb;
+  border-radius: 15px;
+  display: flex;
+  padding: 25px;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #e5e7eb;
+  transition: all 0.2s ease;
+
+  margin: 0; /* REMOVE as margins */
+}
+
+.card-profissional:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* LADO ESQUERDO */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #d1fae5;
+  color: #059669;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* INFO */
+.info .name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.info .details {
+  font-size: 15px;
+  color: #6b7280;
+}
+
+/* LADO DIREITO */
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+/* ITENS */
+.item {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.label {
+  display: inline-block;
+}
+
+/* STATUS (bolinha verde tipo da imagem) */
+.status.done {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  margin-left: 6px;
+}
+
+/* AÇÕES */
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.actions button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.actions button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .session-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .session-cards {
+    grid-template-columns: 1fr;
+  }
+}

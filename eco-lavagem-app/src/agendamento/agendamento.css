@@ -102,16 +102,6 @@
   color: #dc2626;
 }
 
-/* Centralização */
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f3f4f6;
-}
-
-/* Container */
 .container {
   width: 100%;
   max-width: 900px;

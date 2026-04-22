@@ -4,7 +4,7 @@ import { StorageService } from './storage';
 export interface AgendamentoModel {
   id: number;
   nome: string;
-  veiculo: string;
+  veiculo: string;  
   servico: string;
   horario: string;
   profissional: string;
@@ -14,6 +14,7 @@ export interface AgendamentoModel {
 @Injectable({
   providedIn: 'root',
 })
+
 export class AgendamentoService {
   private storageKey = 'agendamentos';
 

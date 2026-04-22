@@ -58,7 +58,7 @@ export class Agendamento {
       servico: ['', Validators.required],
       horario: ['', Validators.required],
       profissional: ['', Validators.required],
-      status: ['Pendente', Validators.required],
+      status: ['', Validators.required],
     });
   }
 
