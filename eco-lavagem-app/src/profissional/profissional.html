@@ -1,56 +1,63 @@
-<!-- Button trigger modal -->
+<div class="paige-container">
+
+  <div class="header-action">
 <button
   type="button"
-  class="btn btn-primary"
+  class="btn btn-primary btn-cadastro"
   data-bs-toggle="modal"
   data-bs-target="#staticBackdrop"
 >
   +Cadastrar Profissional
 </button>
+</div>
 
 <div class="session-cards">
-@for (profissional of profissionalList; track $index) {
-  <div class="card-profissional">
-    <div class="left">
-      <div class="avatar"></div>
+  @for (profissional of profissionalList; track $index) {
+    <div class="card-profissional">
+      <div class="left">
+        <div class="avatar"></div>
 
-      <div class="info">
-        <div class="name">{{ profissional.nome }}</div>
-        <div class="details">{{ profissional.cpf }}</div>
+        <div class="info">
+          <div class="name">{{ profissional.nome }}</div>
+          <div class="item">{{ profissional.cpf }}</div>
+          <div class="item">{{ profissional.email}}</div>
+        </div>  
+      </div>
+
+      <div class="right">
+        <div class="item">
+          <span class="label">{{profissional.telefone }}</span>
+        </div>
+
+        <div class="item">
+          <span class="label">{{ profissional.sexo }}</span>
+        </div>
+
+
+        <div class="actions">
+          <button
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+            (click)="selecionarId(profissional.id)"
+          >
+            ✏️
+          </button>
+
+          <button
+            class="icon delete"
+            data-bs-toggle="modal"
+            data-bs-target="#modalExclusao"
+            (click)="selecionarId(profissional.id)"
+          >
+            🗑️
+          </button>
+        </div>
       </div>
     </div>
-
-    <div class="right">
-      <div class="item">
-        <span class="label">{{ profissional.email }}</span>
-      </div>
-
-      <div class="item">
-        <span class="label">{{ profissional.sexo }}</span>
-        <span class="status done"></span>
-      </div>
-
-      <div class="actions">
-        <button
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-          (click)="selecionarId(profissional.id)"
-        >
-          ✏️
-        </button>
-
-        <button
-          class="icon delete"
-          data-bs-toggle="modal"
-          data-bs-target="#modalExclusao"
-          (click)="selecionarId(profissional.id)"
-        >
-          🗑️
-        </button>
-      </div>
-    </div>
-  </div>
-}</div>
+    
+  }
+</div>
+</div>
 <!-- Modal formulário de cadastro -->
 <div
   class="modal fade"
@@ -64,7 +71,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Cadastrar Profissional</h1>
         <button
           type="button"
           class="btn-close"
@@ -78,25 +85,56 @@
           <form [formGroup]="formProfissional" (ngSubmit)="onSubmit()">
             <div class="campo">
               <label>Nome</label>
-              <input type="text" class="form-control" formControlName="nome" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="nome"
+                placeholder="Digite seu nome completo"
+              />
             </div>
 
             <div class="campo">
               <label>CPF</label>
-              <input type="text" class="form-control" formControlName="cpf" maxlength="11" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="cpf"
+                mask="000.000.000-00"
+                inputmode="numeric"
+                placeholder="Digite apenas números"
+              />
+
             </div>
 
             <div class="campo">
               <label>E-mail</label>
-              <input type="text" class="form-control" formControlName="email" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="email"
+                placeholder="Digite um e-mail válido"
+                inputmode="email"
+              />
+            </div>
+
+            <div class="campo">
+              <label>Telefone</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="telefone"
+                placeholder="Digite seu melhor telefone"
+                inputmode="tel"
+              />
             </div>
 
             <div class="campo">
               <label>Sexo</label>
               <select name="sexo" id="sexo" formControlName="sexo">
-                <option value="masc">Masculino</option>
-                <option value="fem">Feminino</option>
-                <option value="outros">Outros</option>
+                <option value="">Selecione</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outros">Outros</option>
               </select>
             </div>
 

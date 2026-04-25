@@ -22,29 +22,51 @@
 }
 /*fim do modal*/
 
+.paige-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.header-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
 .session-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 
-  max-width: 1200px;  /*limita largura */
   margin: 40px auto;  /*centraliza */
   padding: 0 20px;    /*respiro nas laterais */
 }
 
+
+/* BUTTON */  
+.btn-cadastro {
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #059669;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  color: white;
+}
+
 /* CARD */
 .card-profissional {
-width: 100%;
-  background: #f8f9fb;
-  border-radius: 15px;
+  width: 100%;
   display: flex;
-  padding: 25px;
   justify-content: space-between;
   align-items: center;
+  background: #f8f9fb;
+  padding: 25px;
+  border-radius: 12px;
   border: 2px solid #e5e7eb;
   transition: all 0.2s ease;
-
-  margin: 0; /* REMOVE as margins */
+  background-color: #f9faf9;
 }
 
 .card-profissional:hover {
@@ -110,6 +132,12 @@ width: 100%;
   background: #22c55e;
   border-radius: 50%;
   margin-left: 6px;
+}
+
+/*ERRO*/
+.erro {
+  color: red;
+  margin-top: 5px;
 }
 
 /* AÇÕES */

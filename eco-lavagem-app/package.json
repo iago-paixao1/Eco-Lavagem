@@ -34,6 +34,7 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
     "express": "^5.1.0",
+    "ngx-mask": "^21.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

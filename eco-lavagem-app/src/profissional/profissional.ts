@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProfissionalModel, ProfissionalService } from '../servicos/profissional';
-
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @Component({
   selector: 'app-profissional',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgxMaskDirective],
+  providers: [provideNgxMask()],
   templateUrl: './profissional.html',
   styleUrl: './profissional.css',
 })
@@ -36,6 +37,7 @@ export class Profissional {
     this.limparFormulario();
 
     this.profissionalList= this.profissonalService.getAll()
+    console.log('LISTA ATUAL:', this.profissionalList);
   }
  }
 
@@ -55,6 +57,7 @@ export class Profissional {
     nome: ['', Validators.required],
     cpf:['', Validators.required],
     email: ['', Validators.required],
+    telefone: ['', Validators.required],
     sexo: ['', Validators.required],
   })
  }
@@ -64,7 +67,9 @@ export class Profissional {
   this.formProfissional = this.fb.group({
     nome: [profissional?.nome, Validators.required],
     cpf: [profissional?.cpf, Validators.required],
-    email: [profissional?.email, Validators.required], 
+    email: [profissional?.email, Validators.required],
+    telefone: [profissional?.telefone, Validators.required],
+    sexo: [profissional?.sexo, Validators.required],
 
   });
  }

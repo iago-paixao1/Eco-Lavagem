@@ -1,18 +1,21 @@
-<!-- Button trigger modal -->
+<div class="paige-container">
+
+  <div class="header-action">
 <button
   type="button"
-  class="btn btn-primary"
+  class="btn btn-primary btn-cadastro"
   data-bs-toggle="modal"
   data-bs-target="#staticBackdrop"
 >
   +Novo agendamento
 </button>
+</div>
 
 <div class="session-cards">
   @for (agendamento of agendamentosList; track $index) {
     <div class="card">
       <div class="left">
-        <div class="avatar">JS</div>
+        <div class="avatar"></div>
 
         <div class="info">
           <div class="name">{{ agendamento.nome }}</div>
@@ -57,6 +60,7 @@
     </div>
   }
 </div>
+</div>
 
 <!-- Modal formulário de cadastro -->
 <div
@@ -71,7 +75,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Cadastrar Agendamento</h1>
         <button
           type="button"
           class="btn-close"
@@ -83,34 +87,35 @@
       <div class="modal-body">
         <div class="modal-body">
           <form [formGroup]="formAgendamento" (ngSubmit)="onSubmit()">
-            <div class="mb-3">
+            <div class="campo">
               <label>Nome</label>
               <input type="text" class="form-control" formControlName="nome" />
             </div>
 
-            <div class="mb-3">
+            <div class="campo">
               <label>Veículo</label>
               <input type="text" class="form-control" formControlName="veiculo" />
             </div>
 
-            <div class="mb-3">
+            <div class="campo">
               <label>Serviço</label>
               <input type="text" class="form-control" formControlName="servico" />
             </div>
 
-            <div class="mb-3">
+            <div class="campo">
               <label>Horário</label>
               <input type="time" class="form-control" formControlName="horario" />
             </div>
 
-            <div class="mb-3">
+            <div class="campo">
               <label>Profissional</label>
               <input type="text" class="form-control" formControlName="profissional" />
             </div>
 
-            <div class="mb-3">
+            <div class="campo">
               <label>Status</label>
               <select class="form-control" formControlName="status">
+                <option value="">Selecione</option>
                 <option value="Pendente">Pendente</option>
                 <option value="Em andamento">Em andamento</option>
                 <option value="Concluido">Concluído</option>

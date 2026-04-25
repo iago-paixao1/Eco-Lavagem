@@ -6,6 +6,7 @@ export interface ProfissionalModel {
   nome: string;
   cpf: string;
   email: string;
+  telefone:string;
   sexo: 'Masculino' | 'Feminino' | 'Outros';
 }
 
@@ -29,6 +30,7 @@ export class ProfissionalService {
           nome: 'João Silva',
           cpf: '123.456.789-00',
           email: 'joao@email.com',
+          telefone: '47 984738545',
           sexo: 'Masculino'
         },
       ];
