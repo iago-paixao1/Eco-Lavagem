@@ -9,7 +9,7 @@
 .campo label{
     font-size: 14px;
     margin-bottom: 6px;
-    color: #555;
+    color: #555;      
 }
 /*input e select */
 .campo input,
@@ -43,7 +43,6 @@
   padding: 0 20px;    /*respiro nas laterais */
 }
 
-
 /* BUTTON */  
 .btn-cadastro {
   border-radius: 10px;
@@ -54,19 +53,38 @@
   border: none;
   color: white;
 }
+/* BUTTON SALVAR E CANCELAR */
+.btn-secondary {
+  background-color: rgb(220, 75, 75);
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  margin-right:10px;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background-color: #059669;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  margin-top: 10px;
+}
 
 /* CARD */
 .card-profissional {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f8f9fb;
+  background: #f8f9fb;  
   padding: 25px;
-  border-radius: 12px;
+  border-radius: 14px;
   border: 2px solid #e5e7eb;
-  transition: all 0.2s ease;
-  background-color: #f9faf9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+  cursor: pointer;
 }
 
 .card-profissional:hover {

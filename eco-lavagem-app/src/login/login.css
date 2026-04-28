@@ -1,71 +1,183 @@
-/* app.component.css */
-
-/* Paleta */
-:root{
-  --green-60: #16A34A;    /* primário 60% */
-  --orange-30: #F97316;   /* secundário 30% */
-  --gray-10: #F3F4F6;     /* neutro 10% */
-  --bg: #ffffff;
+.page-container {
+  height: 100vh;
+  display: flex;
+  background: #fffcfc;
 }
 
-/* Background geral */
-.bg-light-custom {
-  background: linear-gradient(180deg, #f7fbf7 0%, #ffffff 100%);
+.card-wrapper {
+  display: flex;
+  width: 100%;
 }
 
-/* Hero column */
-.hero-col {
-  background: linear-gradient(90deg, rgba(22,163,74,0.03), rgba(249,115,22,0.02));
-  min-height: 360px;
-}
-.hero-content .text-primary-60 {
-  color: var(--green-60);
-}
-
-/* Decorative hero image */
-.hero-img {
-  right: -20px;
-  bottom: -20px;
-  width: 320px;
-  opacity: 0.15;
-  pointer-events: none;
-}
-
-/* Brand circle */
-.brand {
-  width: 72px;
-  height: 72px;
-  background: linear-gradient(180deg, rgba(22,163,74,0.06), rgba(22,163,74,0.02));
-  border-radius: 50%;
-}
-
-/* Modal orange styles */
-.bg-orange-light {
-  background: rgba(249,115,22,0.12);
-}
-.text-orange {
-  color: var(--orange-30);
-}
-.btn-orange {
-  background: var(--orange-30);
-  border: none;
+/*LADO ESQUERO (HERO VERDE) */
+.hero-section {
+  flex: 1;
+  background: linear-gradient(135deg, #1fa64b, #36c275);
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Inputs rounded look */
-.form-control {
-  border-radius: 999px !important;
-  box-shadow: none !important;
-  border: 1px solid #e6e6e6;
+.hero-content {
+  max-width: 400px;
 }
 
-/* Make large card rounded */
-.modal-content {
-  border-radius: 16px;
+.hero-content h1 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-/* Responsive tweaks */
-@media (max-width: 767px) {
-  .hero-img { display: none; }
-  .hero-col { padding: 2rem !important; text-align:center }
+.hero-content .highlight {
+  font-style: italic;
+  font-weight: 400;
 }
+
+.hero-content p {
+  margin-top: 20px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/*BOLINHA DO HERO */
+.hero-section::before,
+.hero-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/*BOLINHA GRANDE */
+.hero-section::before {
+  width: 150px;
+  height: 150px;
+  top: 60px;
+  left: 60px;
+}
+/*BOLINHA PEQUENA */
+.hero-section::after {
+  width: 100px;
+  height: 100px;
+  bottom: 400px;
+  right: 60px;
+}
+
+/*LADO DIREITO LOGIN */
+.login-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*CARD DE LOGIN */
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  min-height: 500px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  justify-content: center;
+}
+/*CABEÇALHO */
+.login-header {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.login-header h5 {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.brand span {
+  font-weight: bold;
+  font-size: 18px;
+  color: #1fa64b;
+
+}
+
+/*INPUTS*/
+.form-group {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #dad3d3;
+  margin-top: 10px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #1fa64b;
+}
+
+.error-text {
+  color: red;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/*SENHA + BOTÃO MOSTRAR*/
+.password-group {
+  display: flex;
+  gap: 5px;
+}
+
+.password-group button {
+  background: none;
+  border: solid 1px #dad3d3;
+  border-radius: 8px;
+  color: #1fa64b;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  width: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+/*LINKS */
+.links-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.links-row a {
+  color: #6d6b6b;
+  text-decoration: none;
+}
+
+/*BOTÃO ENTRAR*/
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #1fa64b;
+  color: white;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-login:hover {
+  background: #18873c;
+} 

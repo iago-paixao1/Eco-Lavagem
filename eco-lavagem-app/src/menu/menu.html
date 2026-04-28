@@ -5,11 +5,10 @@
   </div>
 
   <nav class="menu">
-    <a routerLink="/layout" class="active">Início</a>
-    <a routerLink="/agendamento">Agendamentos</a>
-    <a routerLink="/profissional">Profissionais</a>
-    <a routerLink="/servicos">Serviços</a>
-    <a routerLink="/relatorios">Relatórios</a>  
+    <a routerLink="/layout" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Início</a>
+    <a routerLink="/agendamento" routerLinkActive="active">Agendamentos</a>
+    <a routerLink="/profissional" routerLinkActive="active">Profissionais</a>
+    <a routerLink="/p-servicos" routerLinkActive="active">Serviços</a>
   </nav>
 
   <div class="user-area">

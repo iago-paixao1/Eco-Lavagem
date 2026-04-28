@@ -41,6 +41,7 @@
 
         <div class="actions">
           <button
+            class="icon edit"
             data-bs-toggle="modal"
             data-bs-target="#staticBackdrop"
             (click)="selecionarId(agendamento.id)"
@@ -48,7 +49,7 @@
           </button>
 
           <button
-            class="icon delete"
+            class="icon delete btn-delete"
             data-bs-toggle="modal"
             data-bs-target="#modalExclusao"
             (click)="selecionarId(agendamento.id)"

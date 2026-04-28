@@ -47,7 +47,7 @@
   align-items: center;
   padding: 15px;
   border-radius: 12px;
-  border: 2px solid #e5e7eb;
+  border: 1px solid #bac2c0;
   transition: all 0.2s ease;
   background: #f9fafb;
 }
@@ -79,6 +79,25 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
+}
+
+.btn-secondary {
+  background-color: rgb(220, 75, 75);
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background-color: #059669;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  margin-top: 10px;
 }
 
 .info .name {
@@ -134,14 +153,6 @@
   background: transparent;
   cursor: pointer;
   font-size: 16px;
-}
-
-.icon.edit:hover {
-  color: #2563eb;
-}
-
-.icon.delete:hover {
-  color: #dc2626;
 }
 
 .container {

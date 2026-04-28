@@ -1,0 +1,207 @@
+/*modal */
+
+/*cada campo*/
+.campo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.campo label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+/*input e select */
+.campo input,
+.campo select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/*fim do modal*/
+
+.paige-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.header-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+/* Container geral */
+.session-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    padding: 20px;
+}
+
+/* Card */
+.card-servicos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fb;
+    padding: 25px;
+    border-radius: 14px;
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+/* BUTTON */
+.btn-cadastro {
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #059669;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    color: white;
+}
+
+/* BUTTON SALVAR E CANCELAR */
+.btn-secondary {
+    background-color: rgb(220, 75, 75);
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: #059669;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+/* Hover bonito */
+.card-servicos:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Lado esquerdo */
+.left {
+    display: flex;
+    gap: 14px;
+}
+
+/* Avatar (ícone colorido tipo da imagem) */
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+
+/* Info */
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Nome do serviço */
+.name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Descrição */
+.item {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Tempo (badge estilo pill) */
+.info .item:last-child {
+    margin-top: 6px;
+    display: inline-block;
+    width: fit-content;
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+/* Lado direito */
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/* Preço */
+.label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #16a34a;
+}
+
+/* Ações */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Botões */
+.actions button {
+    border: none;
+    background: #f1f5f9;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+/* Hover botão */
+.actions button:hover {
+    background: #e2e8f0;
+    transform: scale(1.05);
+}
+
+/* Botão delete */
+.actions .delete:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+    .card-servicos {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .right {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+}

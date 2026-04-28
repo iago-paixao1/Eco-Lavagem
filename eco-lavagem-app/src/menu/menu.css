@@ -1,31 +1,101 @@
+/* Navbar */
 .navbar {
-  height: 64px;
-  padding: 0 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 70px;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
+/* Logo / Brand */
 .brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+}
+
+.brand img {
+  height: 40px;
 }
 
 .brand-name {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  gap: 30px;
 }
 
 .menu a {
-  margin: 0 12px;
+  position: relative;
   text-decoration: none;
   color: #555;
+  font-size: 18px;
   font-weight: 500;
-  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
+/* Linha animada no hover */
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #2e7d32;
+  transition: width 0.3s ease;
+}
+
+/* Hover efeito */
+.menu a:hover {
+  color: #2e7d32;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* Link ativo */
 .menu a.active {
-  color: #28a745;
-  border-bottom: 2px solid #28a745;
+  color: #2e7d32;
+}
+
+.menu a.active::after {
+  width: 100%;
+}
+
+/* Área do usuário */
+.user-area {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #2e7d32;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover avatar */
+.avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+/* Sombra leve */
+.shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }

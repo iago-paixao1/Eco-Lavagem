@@ -9,21 +9,31 @@ export const routes: Routes = [
   },
   {
     path: 'layout',
+    title: 'Página Inicial',  
     loadComponent: () => import('../layout/layout').then(m => m.LayoutComponent),
   },
   {
     path: 'agendamento',
+    title: 'Agendamentos',
     loadComponent: () => import('../agendamento/agendamento').then(m => m.Agendamento),
   },
   {
     path: 'profissional',
+    title: 'Profissionais',
     loadComponent: () => import('../profissional/profissional').then(m => m.Profissional),
   },
   {
     path: 'login',
-    title: 'LOGIN',
+    title: 'Tela de Login',
     loadComponent: () => import('../login/login').then((m) => m.LoginComponent),
   },
+  
+  {
+    path: 'p-servicos',
+    title: 'Serviços',
+    loadComponent: () => import('../p-servicos/p-servicos').then((m) => m.PServicos),
+  },
+  
   { path: '**', redirectTo: 'layout' }, // rota coringa para redirecionar páginas não encontradas
 ];
 
