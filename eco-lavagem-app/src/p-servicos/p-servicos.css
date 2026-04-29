@@ -41,23 +41,23 @@
 .session-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
+    gap: 15px;
     padding: 20px;
 }
 
 /* Card */
 .card-servicos {
-    width: 100%;
     display: flex;
+    position: relative;
     justify-content: space-between;
     align-items: center;
-    background: #f8f9fb;
-    padding: 25px;
+    padding: 28px;
     border-radius: 14px;
-    border: 2px solid #e5e7eb;
+    border: 1px solid #bac2c0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
     transition: all 0.25s ease;
     cursor: pointer;
+    background: #f9fafb;
 }
 
 /* BUTTON */
@@ -105,8 +105,8 @@
 
 /* Avatar (ícone colorido tipo da imagem) */
 .avatar {
-    width: 48px;
-    height: 48px;
+    width: 65px;
+    height: 65px;
     border-radius: 12px;
     background: linear-gradient(135deg, #4caf50, #2e7d32);
     display: flex;
@@ -138,18 +138,18 @@
 
 /* Tempo (badge estilo pill) */
 .info .item:last-child {
-    margin-top: 6px;
+    margin-top: 25px;
     display: inline-block;
-    width: fit-content;
     background: #f1f5f9;
     color: #64748b;
-    font-size: 12px;
+    font-size: 20px;
     padding: 4px 10px;
-    border-radius: 999px;
+    border-radius: 25px;
 }
 
 /* Lado direito */
 .right {
+    width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -163,34 +163,29 @@
     color: #16a34a;
 }
 
-/* Ações */
+/* AÇÕES */
 .actions {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     display: flex;
     gap: 8px;
 }
 
-/* Botões */
 .actions button {
     border: none;
-    background: #f1f5f9;
-    border-radius: 8px;
-    padding: 6px 10px;
+    background: transparent;
     cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 14px;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: 0.2s;
 }
 
-/* Hover botão */
 .actions button:hover {
-    background: #e2e8f0;
-    transform: scale(1.05);
+    opacity: 1;
+    transform: scale(1.1);
 }
 
-/* Botão delete */
-.actions .delete:hover {
-    background: #fee2e2;
-    color: #dc2626;
-}
 
 /* Responsivo */
 @media (max-width: 500px) {

@@ -7,7 +7,7 @@
   data-bs-toggle="modal"
   data-bs-target="#staticBackdrop"
 >
-  +Novo agendamento
+  + Novo agendamento
 </button>
 </div>
 
@@ -90,12 +90,12 @@
           <form [formGroup]="formAgendamento" (ngSubmit)="onSubmit()">
             <div class="campo">
               <label>Nome</label>
-              <input type="text" class="form-control" formControlName="nome" />
+              <input type="text" class="form-control" formControlName="nome" placeholder="Ex: João Silva" />
             </div>
 
             <div class="campo">
               <label>Veículo</label>
-              <input type="text" class="form-control" formControlName="veiculo" />
+              <input type="text" class="form-control" formControlName="veiculo" placeholder="Ex: Honda Civic "/>
             </div>
 
             <div class="campo">
@@ -105,7 +105,7 @@
 
             <div class="campo">
               <label>Horário</label>
-              <input type="time" class="form-control" formControlName="horario" />
+              <input type="time" class="form-control" formControlName="horario"  />
             </div>
 
             <div class="campo">

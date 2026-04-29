@@ -1,25 +1,28 @@
 /*modal */
 
 /*cada campo*/
-.campo{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+.campo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
-.campo label{
-    font-size: 14px;
-    margin-bottom: 6px;
-    color: #555;      
+
+.campo label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #555;
 }
+
 /*input e select */
 .campo input,
-.campo select{
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    margin-bottom: 10px;
+.campo select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
+
 /*fim do modal*/
 
 .paige-container {
@@ -37,13 +40,15 @@
 .session-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 15px;
 
-  margin: 40px auto;  /*centraliza */
-  padding: 0 20px;    /*respiro nas laterais */
+  margin: 40px auto;
+  /*centraliza */
+  padding: 0 20px;
+  /*respiro nas laterais */
 }
 
-/* BUTTON */  
+/* BUTTON */
 .btn-cadastro {
   border-radius: 10px;
   padding: 15px;
@@ -53,6 +58,7 @@
   border: none;
   color: white;
 }
+
 /* BUTTON SALVAR E CANCELAR */
 .btn-secondary {
   background-color: rgb(220, 75, 75);
@@ -60,7 +66,7 @@
   font-weight: bold;
   border: none;
   padding: 12px;
-  margin-right:10px;
+  margin-right: 10px;
   margin-top: 10px;
 }
 
@@ -76,15 +82,16 @@
 /* CARD */
 .card-profissional {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
-  background: #f8f9fb;  
-  padding: 25px;
+  padding: 28px;
   border-radius: 14px;
-  border: 2px solid #e5e7eb;
+  border: 1px solid #bac2c0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
   transition: all 0.25s ease;
   cursor: pointer;
+  background: #f9fafb;
 }
 
 .card-profissional:hover {
@@ -103,9 +110,7 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: #d1fae5;
-  color: #059669;
-
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,12 +120,12 @@
 /* INFO */
 .info .name {
   font-size: 18px;
-  font-weight: 600;
-  color: #111827;
+  font-weight: bold;
+  color: black;
 }
 
 .info .details {
-  font-size: 15px;
+  font-size: 16px;
   color: #6b7280;
 }
 
@@ -160,9 +165,11 @@
 
 /* AÇÕES */
 .actions {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   display: flex;
   gap: 8px;
-  margin-top: 6px;
 }
 
 .actions button {

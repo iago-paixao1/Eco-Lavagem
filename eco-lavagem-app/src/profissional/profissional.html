@@ -1,62 +1,53 @@
 <div class="paige-container">
-
   <div class="header-action">
-<button
-  type="button"
-  class="btn btn-primary btn-cadastro"
-  data-bs-toggle="modal"
-  data-bs-target="#staticBackdrop"
->
-  +Cadastrar Profissional
-</button>
-</div>
+    <button
+      type="button"
+      class="btn btn-primary btn-cadastro"
+      data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop"
+    >
+      + Cadastrar Profissional
+    </button>
+  </div>
 
-<div class="session-cards">
-  @for (profissional of profissionalList; track $index) {
-    <div class="card-profissional">
-      <div class="left">
-        <div class="avatar"></div>
+  <div class="session-cards">
+    @for (profissional of profissionalList; track $index) {
+      <div class="card-profissional">
+        <div class="left">
+          <div class="avatar"></div>
 
-        <div class="info">
-          <div class="name">{{ profissional.nome }}</div>
-          <div class="item">{{ profissional.cpf }}</div>
-          <div class="item">{{ profissional.email}}</div>
-        </div>  
-      </div>
-
-      <div class="right">
-        <div class="item">
-          <span class="label">{{profissional.telefone }}</span>
+          <div class="info">
+            <div class="name">{{ profissional.nome }}</div>
+            <div class="item">{{ profissional.cpf | cpf }}</div>
+            <div class="item">{{ profissional.email }}</div>
+            <div class="item">{{ profissional.telefone | telefone }}</div>
+            <div class="item">{{ profissional.sexo }}</div>
+          </div>
         </div>
 
-        <div class="item">
-          <span class="label">{{ profissional.sexo }}</span>
-        </div>
+        <div class="right">
+          <div class="actions">
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+              (click)="selecionarId(profissional.id)"
+            >
+              ✏️
+            </button>
 
-
-        <div class="actions">
-          <button
-            data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
-            (click)="selecionarId(profissional.id)"
-          >
-            ✏️
-          </button>
-
-          <button
-            class="icon delete"
-            data-bs-toggle="modal"
-            data-bs-target="#modalExclusao"
-            (click)="selecionarId(profissional.id)"
-          >
-            🗑️
-          </button>
+            <button
+              class="icon delete"
+              data-bs-toggle="modal"
+              data-bs-target="#modalExclusao"
+              (click)="selecionarId(profissional.id)"
+            >
+              🗑️
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    
-  }
-</div>
+    }
+  </div>
 </div>
 <!-- Modal formulário de cadastro -->
 <div
@@ -89,7 +80,7 @@
                 type="text"
                 class="form-control"
                 formControlName="nome"
-                placeholder="Digite seu nome completo"
+                placeholder="Ex: Maria Santos"
               />
             </div>
 
@@ -100,10 +91,8 @@
                 class="form-control"
                 formControlName="cpf"
                 mask="000.000.000-00"
-                inputmode="numeric"
-                placeholder="Digite apenas números"
+                placeholder="Apenas números"
               />
-
             </div>
 
             <div class="campo">
@@ -123,8 +112,9 @@
                 type="text"
                 class="form-control"
                 formControlName="telefone"
-                placeholder="Digite seu melhor telefone"
+                placeholder="Apenas números"
                 inputmode="tel"
+                mask="(00) 00000-0000"
               />
             </div>
 
@@ -182,7 +172,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onExcluir()">
-          Excluir Registro
+          Excluir Profissional
         </button>
       </div>
     </div>

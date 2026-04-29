@@ -33,6 +33,7 @@
     "@angular/ssr": "^21.0.4",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
+    "chart.js": "^4.5.1",
     "express": "^5.1.0",
     "ngx-mask": "^21.0.1",
     "rxjs": "~7.8.0",

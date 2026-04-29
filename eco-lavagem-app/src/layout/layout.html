@@ -1,8 +1,6 @@
 <div class="layout-container">
-
   <!-- CONTEÚDO PRINCIPAL -->
   <main class="content">
-
     <h2 class="welcome">Bom dia, {{ userName }}!</h2>
     <p class="subtitle">Aqui está o resumo das atividades de hoje</p>
 
@@ -10,24 +8,19 @@
     <section class="cards">
       <div class="card">
         <h4>Agendamentos Hoje</h4>
-        <strong>24</strong>
-        <span class="percent up">+12% vs ontem</span>
-      </div>
-
-      <div class="card">
-        <h4>Lavagens Concluídas</h4>
-        <strong>18</strong>
-        <span class="percent up">+5% vs ontem</span>
-      </div>
-
-      <div class="card">
-        <h4>Em Andamento</h4>
-        <strong class="orange">6</strong>
+        <strong></strong>
+        <span class="percent up"></span>
       </div>
 
       <div class="card">
         <h4>Profissionais Ativos</h4>
-        <strong>8</strong>
+        <strong>{{profissionalList.length}}</strong>
+      </div>
+
+      <div class="card">
+        <h4>Serviços Cadastrados</h4>
+        <strong></strong>
+        <span class="percent up"></span>
       </div>
     </section>
 
@@ -40,14 +33,12 @@
 
     <!-- CONTEÚDO EM DUAS COLUNAS -->
     <section class="grid">
-
       <!-- AGENDA DO DIA -->
       <div class="agenda card-big">
         <h3>Agenda de Hoje</h3>
         <p class="date">15 de Novembro, 2024</p>
 
         <ul class="agenda-list">
-
           <li>
             <span class="hour">08:00</span>
             <div class="info">
@@ -74,17 +65,18 @@
             </div>
             <span class="status scheduled">Agendado</span>
           </li>
-
         </ul>
       </div>
 
       <!-- GRÁFICOS (mock, você substitui depois por chart.js) -->
-      <div class="graphs">
-        <div class="card graph"></div>
-        <div class="card graph"></div>
-      </div>
-
+      <section class="graphs">
+        <div class="card graph">
+          <canvas id="graficoVendas"></canvas>
+        </div>
+        <div class="card graph">
+          <canvas id="graficoServicos"></canvas>
+        </div>
+      </section>
     </section>
-
   </main>
 </div>

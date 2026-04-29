@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProfissionalModel, ProfissionalService } from '../servicos/profissional';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { TelefonePipe } from '../app/telefone-pipe';
+import { CpfPipe } from '../app/cpf-pipe';
 
 @Component({
   selector: 'app-profissional',
-  imports: [ReactiveFormsModule, NgxMaskDirective],
+  standalone: true,
+  imports: [ReactiveFormsModule, NgxMaskDirective, TelefonePipe, CpfPipe],
   providers: [provideNgxMask()],
   templateUrl: './profissional.html',
   styleUrl: './profissional.css',
@@ -16,8 +19,11 @@ export class Profissional {
   idSelecionado: number = 0;
 
   constructor(
+    
     private fb: FormBuilder,
     private profissonalService: ProfissionalService,
+    public profissionalService: ProfissionalService,
+    private profissionalServicee: ProfissionalService,
   ) {}
 
   ngOnInit(): void {
@@ -57,7 +63,7 @@ export class Profissional {
       nome: ['', Validators.required],
       cpf: ['', Validators.required],
       email: ['', Validators.required],
-      telefone: ['', Validators.required],
+      telefone: ['', [Validators.pattern(/^[0-9]*$/)]],
       sexo: ['', Validators.required],
     });
   }
@@ -71,5 +77,11 @@ export class Profissional {
       telefone: [profissional?.telefone, Validators.required],
       sexo: [profissional?.sexo, Validators.required],
     });
+  }
+
+  onTelefoneInput(event: any) {
+    let value = event.target.value.replace(/\D/g, ''); // remove tudo que não for número
+    event.target.value = value;
+    this.formProfissional.get('telefone')?.setValue(value, { emitEvent: false });
   }
 }
